@@ -8,7 +8,6 @@ app = Flask(__name__)
 db = MongoClient().nobel_prize  
 
 @app.route('/api/winners') 
-
 def get_country_data():   
     query_dict = {}  
     for key in ['country', 'category', 'year']: 
@@ -19,7 +18,7 @@ def get_country_data():
             arg = request.args.get(key) 
             query_dict[key] = arg   
 
-    winners = db.winners_clean.find(query_dict)
+    winners = db.winners_cleaned.find(query_dict)
 #    import pdb; pdb.set_trace()
     if winners:  
         return dumps(winners) 
