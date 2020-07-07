@@ -8,6 +8,7 @@
 
 URL_PREFIX = 'api' 
 MONGO_DBNAME = 'nobel_prize' 
+X_DOMAINS = 'http://localhost:8080'
 
 DOMAIN = {'winners_cleaned':
             {  'schema':
