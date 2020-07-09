@@ -3,6 +3,7 @@ var API_URL = 'http://localhost:5000/api';
 console.log('Вход')
 var displayJSON = function(query) {   
 	console.log('Вход в displayJSON')
+    console.log(query)
 	d3.json(API_URL + query, function(error, data) {   	   // log any error to the console as a warning  
 	if(error){  
 		return console.warn(error);  
@@ -13,10 +14,10 @@ var displayJSON = function(query) {
 	}); 
 };  
 
-//var query = '/winners?where=' + JSON.stringify(
-//	{ "year":{"$gt":2000},  
-//	  "gender": "female" }
-//	);  
-//
-var query = 'Пробная заглушка'
+var query = '/winners_cleaned?where=' + JSON.stringify(
+	{ "year":{"$gt":2000},  
+	  "gender": "female" }
+	);  
+//var query = "/winners_cleaned\?where='{"country":"Russia"}' "
+console.log(query)
 displayJSON(query);
